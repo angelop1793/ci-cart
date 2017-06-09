@@ -34,10 +34,10 @@
 		    $this->load->view('cart/cart');
 		}
 
-		public function contents(){
-			$data['products'] = $this->cart_model->retrieve_products();
-			var_dump($data['products']);
-			die();
-		}
+		// public function contents(){
+		// 	$data['products'] = $this->cart_model->retrieve_products();
+		// 	var_dump($data['products']);
+		// 	die();
+		// }
 	}
 ?>

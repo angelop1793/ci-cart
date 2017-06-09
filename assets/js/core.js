@@ -1,6 +1,6 @@
 $(document).ready(function() { 
 		/*place jQuery actions here*/ 
-		var link = "/CI_Cart/index.php/"; // Url to your application (including index.php/)
+		var link = "/ci-cart/index.php/"; // Url to your application (including index.php/)
 	
 		$("ul.products form").submit(function() {
 			// Get the product ID and the quantity 
