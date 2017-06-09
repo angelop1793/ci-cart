@@ -3,7 +3,7 @@
 else:
 ?>
  
-<?php echo form_open('cart/update_cart'); ?>
+<?php echo form_open(base_url().'index.php/cart/update_cart'); ?>
 <table width="100%" cellpadding="0" cellspacing="0">
     <thead>
         <tr>
@@ -15,6 +15,7 @@ else:
     </thead>
     <tbody>
         <?php $i = 1; ?>
+
         <?php foreach($this->cart->contents() as $items): ?>
          
         <?php echo form_hidden('rowid[]', $items['rowid']); ?>
@@ -41,7 +42,7 @@ else:
     </tbody>
 </table>
  
-<p><?php echo form_submit('', 'Update your Cart'); echo anchor('cart/empty_cart', 'Empty Cart', 'class="empty"');?></p>
+<p><?php echo form_submit('', 'Update your Cart'); ?><button type="button" class="empty">Empty Cart</button></p>
 <p><small>If the quantity is set to zero, the item will be removed from the cart.</small></p>
 <?php 
 echo form_close(); 

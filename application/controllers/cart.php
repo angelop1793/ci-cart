@@ -31,13 +31,16 @@
 		}
 
 		public function show_cart(){
-		    $this->load->view('cart/cart');
+		    $this->load->view('cart/cart' );
 		}
 
-		// public function contents(){
-		// 	$data['products'] = $this->cart_model->retrieve_products();
-		// 	var_dump($data['products']);
-		// 	die();
-		// }
+		public function update_cart(){
+		    $this->cart_model->validate_update_cart();
+		    redirect();
+		}
+
+		public function empty_cart(){
+		    $this->cart->destroy(); // Destroy all cart data
+		}
 	}
 ?>

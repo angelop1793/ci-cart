@@ -48,5 +48,28 @@
 		    }
      
 		}
+
+		public function validate_update_cart(){
+     	
+		    // Get the total number of items in cart
+		    $total = $this->cart->total_items();
+
+		    // Retrieve the posted information
+		    $item = $this->input->post('rowid');
+		    $qty = $this->input->post('qty');
+		    // Cycle true all items and update them
+		    for($i=0;$i < sizeof($item);$i++)
+		    {
+
+		        // Create an array with the products rowid's and quantities. 
+		        $data = array(
+		           'rowid' => $item[$i],
+		           'qty'   => $qty[$i]
+		        );
+		        
+		        // Update the cart with the new information
+		        $this->cart->update($data);
+		    }
+		}
 	}
 ?>
